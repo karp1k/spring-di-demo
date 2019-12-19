@@ -16,7 +16,7 @@ public class PropertyInjectedControllerTest {
     @Before
     public void init() {
         this.propertyInjectedController = new PropertyInjectedController();
-        this.propertyInjectedController.greetingsService = new GreetingsServiceImpl();
+        this.propertyInjectedController.greetingsServiceImpl = new GreetingsServiceImpl();
     }
 
     @Test

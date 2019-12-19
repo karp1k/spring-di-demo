@@ -1,6 +1,6 @@
 package guru.springframework.didemo.controllers;
 
-import guru.springframework.didemo.services.GreetingsServiceImpl;
+import guru.springframework.didemo.services.GreetingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
     @Autowired
-    public GreetingsServiceImpl greetingsService;
+    public GreetingsService greetingsServiceImpl;
 
     public String callService() {
-        return greetingsService.sayHello();
+        return greetingsServiceImpl.sayHello();
     }
 }
