@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
  * @author kas
  */
 @Component
-@Profile("en")
+@Profile("es")
 @Primary
-public class PrimaryGreetingsServiceImpl implements GreetingsService {
+public class SpanishGreetingsServiceImpl implements GreetingsService {
 
-    public static final String PRIMARY_HELLO = "I am number one!";
+    public static final String SPANISH_HELLO = "Hola";
 
     @Override
     public String sayHello() {
-        return PRIMARY_HELLO;
+        return SPANISH_HELLO;
     }
 }
