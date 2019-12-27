@@ -1,11 +1,13 @@
 package guru.springframework.didemo.configuration;
 
 import guru.springframework.didemo.propertyexamples.FakeDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 /**
  * @author kas
@@ -13,6 +15,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @PropertySource("classpath:datasource.properties")
 public class PropertyConfig {
+
+    @Autowired
+    Environment env;
 
     @Value("${db.username}")
     String username;
@@ -23,7 +28,7 @@ public class PropertyConfig {
 
     @Bean
     public FakeDataSource fakeDataSource() {
-        return new FakeDataSource(username, password, dbUrl);
+        return new FakeDataSource(env.getProperty("username"), password, dbUrl);
     }
 
     // In SpringBoot if you are using @PropertySource to register a property file to Spring Environment,
