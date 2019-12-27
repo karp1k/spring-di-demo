@@ -1,0 +1,4 @@
+jms:
+  username: Rik
+  password: 12345
+  url: "localhost:123"

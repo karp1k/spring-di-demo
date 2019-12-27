@@ -42,7 +42,7 @@ public class PropertyConfig {
     @Bean
     public FakeJmsBroker fakeJmsBroker() {
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
-        fakeJmsBroker.setUsername(username);
+        fakeJmsBroker.setUsername(jmsUsername);
         fakeJmsBroker.setPassword(jmsPassword);
         fakeJmsBroker.setUrl(jmsUrl);
         return fakeJmsBroker;
