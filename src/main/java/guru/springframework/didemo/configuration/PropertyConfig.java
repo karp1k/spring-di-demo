@@ -12,6 +12,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 /**
+ * https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config
  * @author kas
  */
 @Configuration
@@ -27,7 +28,7 @@ public class PropertyConfig {
 
     @Value("${db.username}")
     String username;
-    @Value("${password}")
+    @Value("${db.password}")
     String password;
     @Value("${db.url}")
     String dbUrl;

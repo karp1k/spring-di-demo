@@ -2,3 +2,9 @@ jms:
   username: Rik
   password: 12345
   url: "localhost:123"
+
+--- #file separator
+spring:
+  profiles: de
+jms:
+  username: RikInGerman

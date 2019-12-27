@@ -25,6 +25,7 @@ public class DiDemoApplication {
 
         FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
         System.out.println("db username: " + fakeDataSource.getUsername());
+        System.out.println("db url: " + fakeDataSource.getDbUrl());
 
         FakeJmsBroker fakeJmsBroker = ctx.getBean(FakeJmsBroker.class);
         System.out.println("jms username: " + fakeJmsBroker.getUsername());
