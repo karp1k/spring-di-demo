@@ -61,9 +61,9 @@ public class PropertyConfig {
     // propertySourcesPlaceholderConfigurer.setLocation(new ClassPathResource("datasource.properties"));
     // return PropertySourcesPlaceholderConfigurer;
     // ------------------------------------------------------------------------------------------------------------------------
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
+//    @Bean
+//    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+//        return new PropertySourcesPlaceholderConfigurer();
+//    }
 
 }

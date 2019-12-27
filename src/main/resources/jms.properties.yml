@@ -1,0 +1,38 @@
+# comment
+
+name: Anna
+
+# array(list)
+names: # inline comment
+  - Tom
+  - Rick
+  - Anna
+
+pound_sign: "#"
+
+# complex object
+book:
+  athor: Rick Castle
+  publisher: ABC
+  name: Nicky Heat
+
+bool_val: yes
+
+another_bool_val: True
+
+and_another_bool_val: true
+
+false_bool_val: no #No, false, FALSE
+
+string_val: "This is a string"
+
+include_new_lines: |
+  long string
+  with 3 lines
+  in variable
+
+# new lines will be dropped
+ignore_new_lines: >
+  this is
+  one long string
+  ha ha
