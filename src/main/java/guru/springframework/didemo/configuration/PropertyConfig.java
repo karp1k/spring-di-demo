@@ -1,11 +1,13 @@
 package guru.springframework.didemo.configuration;
 
 import guru.springframework.didemo.propertyexamples.FakeDataSource;
+import guru.springframework.didemo.propertyexamples.FakeJmsBroker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
@@ -13,7 +15,11 @@ import org.springframework.core.env.Environment;
  * @author kas
  */
 @Configuration
-@PropertySource("classpath:datasource.properties")
+//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
+@PropertySources({
+        @PropertySource("classpath:datasource.properties"),
+        @PropertySource("classpath:jms.properties")
+})
 public class PropertyConfig {
 
     @Autowired
@@ -25,6 +31,22 @@ public class PropertyConfig {
     String password;
     @Value("${db.url}")
     String dbUrl;
+
+    @Value("${jms.username}")
+    String jmsUsername;
+    @Value("${jms.password}")
+    String jmsPassword;
+    @Value("${jms.url}")
+    String jmsUrl;
+
+    @Bean
+    public FakeJmsBroker fakeJmsBroker() {
+        FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
+        fakeJmsBroker.setUsername(username);
+        fakeJmsBroker.setPassword(jmsPassword);
+        fakeJmsBroker.setUrl(jmsUrl);
+        return fakeJmsBroker;
+    }
 
     @Bean
     public FakeDataSource fakeDataSource() {
